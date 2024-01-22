@@ -1,9 +1,10 @@
 import axios from "axios";
+import { Item } from "../models/item";
 
 export class HackerNewsService {
-  private _baseUrl = "https://hacker-news.firebaseio.com/v0/";
+  private static _baseUrl = "https://hacker-news.firebaseio.com/v0/";
 
-  public async getItem(id: number): Promise<Array<number> | undefined> {
+  public static async getItem(id: number): Promise<Item | undefined> {
     try {
       const url = `${this._baseUrl}/item/${id}.json`;
       const response = await axios.get(url);
@@ -13,7 +14,7 @@ export class HackerNewsService {
     }
   }
 
-  public async getNewItemIds(): Promise<Array<number> | undefined> {
+  public static async getNewItemIds(): Promise<Array<number> | undefined> {
     try {
       const url = `${this._baseUrl}/newstories.json`;
       const response = await axios.get(url);
