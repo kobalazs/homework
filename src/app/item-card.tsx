@@ -1,6 +1,6 @@
 
 import { Card, Skeleton } from 'antd';
-import { HackerNewsService } from './services/hacker-news.service';
+import { serviceInstance } from './services/hacker-news.service';
 import { useEffect, useState } from 'react';
 import { Item } from './models/item';
 import Title from 'antd/lib/typography/Title';
@@ -12,7 +12,7 @@ export function ItemCard({ id }: { id: number }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setItem(await HackerNewsService.getItem(id));
+        setItem(await serviceInstance.getItem(id));
       } catch (error) {
         console.error('Error fetching data:', error);
       }

@@ -2,7 +2,7 @@
 
 import { Flex, Pagination, Space } from 'antd';
 import { useEffect, useState } from 'react';
-import { HackerNewsService } from './services/hacker-news.service';
+import { serviceInstance } from './services/hacker-news.service';
 import { ItemCard } from './item-card';
 import Title from 'antd/lib/typography/Title';
 
@@ -14,7 +14,7 @@ export default function Page() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setItemIds(await HackerNewsService.getNewItemIds());
+        setItemIds(await serviceInstance.getNewItemIds());
       } catch (error) {
         console.error('Error fetching data:', error);
       }
