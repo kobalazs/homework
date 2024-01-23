@@ -1,5 +1,11 @@
-import axios from "axios";
+import Axios from "axios";
 import { Item } from "../models/item";
+import { setupCache } from "axios-cache-interceptor";
+
+// In-memory cache with TTL=60s. Hardcoded for demo purposes.
+const axios = setupCache(Axios.create(), {
+  headerInterpreter: () => 60 * 1000,
+});
 
 export class HackerNewsService {
   private static _baseUrl = "https://hacker-news.firebaseio.com/v0/";
@@ -8,6 +14,7 @@ export class HackerNewsService {
     try {
       const url = `${this._baseUrl}/item/${id}.json`;
       const response = await axios.get(url);
+      console.log(response.cached);
       return response.data;
     } catch (error) {
       console.error(error);
