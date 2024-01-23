@@ -23,7 +23,7 @@ export default function Page() {
   return (
     <Space direction="vertical" size="middle" style={{ display: 'flex', margin: '0 auto 50px', width: '80%', minWidth: 800 }}>
       <Title level={1}>Hacker News V4.0</Title>
-      <Flex gap={20} wrap="wrap">
+      <Flex gap={20} vertical>
         {itemIds?.slice(0, 10).map((itemId) => (
           <ItemCard id={itemId} key={itemId} />
         ))}

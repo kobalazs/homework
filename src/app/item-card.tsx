@@ -4,6 +4,7 @@ import { HackerNewsService } from './services/hacker-news.service';
 import { useEffect, useState } from 'react';
 import { Item } from './models/item';
 import Title from 'antd/es/typography/Title';
+import Paragraph from 'antd/es/typography/Paragraph';
 
 export function ItemCard({ id }: { id: number }) {
   const [item, setItem] = useState<Item | undefined>(undefined);
@@ -20,9 +21,12 @@ export function ItemCard({ id }: { id: number }) {
   }, [id]);
 
   return item && (
-    <Card style={{ height: 400, width: '23%', overflow: 'hidden' }}>
+    <Card
+      hoverable
+      onClick={() => window.open(item.url, '_blank')}
+    >
+      <Paragraph>{item.by}</Paragraph>
       <Title level={5}>{item.title}</Title>
-      {JSON.stringify(item)}
     </Card>
   );
 }
