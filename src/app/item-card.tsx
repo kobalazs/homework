@@ -1,5 +1,5 @@
 
-import { Card } from 'antd';
+import { Card, Skeleton } from 'antd';
 import { HackerNewsService } from './services/hacker-news.service';
 import { useEffect, useState } from 'react';
 import { Item } from './models/item';
@@ -20,7 +20,7 @@ export function ItemCard({ id }: { id: number }) {
     fetchData();
   }, [id]);
 
-  return item && (
+  return item ? (
     <Card
       hoverable
       onClick={() => window.open(item.url, '_blank')}
@@ -28,5 +28,5 @@ export function ItemCard({ id }: { id: number }) {
       <Paragraph>{item.by}</Paragraph>
       <Title level={5}>{item.title}</Title>
     </Card>
-  );
+  ) : <Card style={{ height: 123, overflow: 'hidden' }}><Skeleton /></Card>;
 }

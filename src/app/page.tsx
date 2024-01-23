@@ -22,6 +22,11 @@ export default function Page() {
     fetchData();
   }, []);
 
+  function paginate(page: number, pageSize: number) {
+    setPage(page);
+    setPageSize(pageSize);
+  }
+
   return (
     <Space direction="vertical" size="middle" style={{ display: 'flex', margin: '0 auto 50px', width: '80%', minWidth: 800 }}>
       <Title level={1}>Hacker News V4.0</Title>
@@ -30,7 +35,7 @@ export default function Page() {
           <ItemCard id={itemId} key={itemId} />
         ))}
       </Flex>
-      <Pagination total={itemIds?.length} onChange={setPage} onShowSizeChange={setPageSize} />
+      <Pagination total={itemIds?.length} onChange={paginate} onShowSizeChange={paginate} />
     </Space>
   )
 }
