@@ -4,7 +4,7 @@ import { Flex, Pagination, Space } from 'antd';
 import { useEffect, useState } from 'react';
 import { HackerNewsService } from './services/hacker-news.service';
 import { ItemCard } from './item-card';
-import Title from 'antd/es/typography/Title';
+import Title from 'antd/lib/typography/Title';
 
 export default function Page() {
   const [itemIds, setItemIds] = useState<Array<number> | undefined>(undefined);

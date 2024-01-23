@@ -3,8 +3,8 @@ import { Card, Skeleton } from 'antd';
 import { HackerNewsService } from './services/hacker-news.service';
 import { useEffect, useState } from 'react';
 import { Item } from './models/item';
-import Title from 'antd/es/typography/Title';
-import Paragraph from 'antd/es/typography/Paragraph';
+import Title from 'antd/lib/typography/Title';
+import Paragraph from 'antd/lib/typography/Paragraph';
 
 export function ItemCard({ id }: { id: number }) {
   const [item, setItem] = useState<Item | undefined>(undefined);
