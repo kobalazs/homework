@@ -14,7 +14,6 @@ export class HackerNewsService {
     try {
       const url = `${this._baseUrl}/item/${id}.json`;
       const response = await axios.get(url);
-      console.log(response.cached);
       return response.data;
     } catch (error) {
       console.error(error);
