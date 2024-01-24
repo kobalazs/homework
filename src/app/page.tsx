@@ -13,11 +13,7 @@ export default function Page() {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        setItemIds(await serviceInstance.getNewItemIds());
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+      setItemIds(await serviceInstance.getNewItemIds());
     };
     fetchData();
   }, []);

@@ -11,11 +11,7 @@ export function ItemCard({ id }: { id: number }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        setItem(await serviceInstance.getItem(id));
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+      setItem(await serviceInstance.getItem(id));
     };
     fetchData();
   }, [id]);
