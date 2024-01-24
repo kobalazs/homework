@@ -2,17 +2,14 @@
 
 ## Description
 
-A redesign of Hacker News homepage using React & Axios.
+A redesign of the Hacker News homepage using React & Axios.
 
 ### Assumptions
 
-- List only new stories, showing author and title information.
-
-- Use pagination for better performance.
-
-- Add an in-memory cache (TTL = 60 sec) to reduce API load.
-
-- Skip optimising for accessibility or internationalization.
+* List only new stories, showing author and title information.
+* Use pagination for better performance.
+* Add an in-memory cache (TTL = 60 sec) to reduce API load.
+* Skip optimising for mobile devices, accessibility or internationalization.
 
 ## Installation guide
 
