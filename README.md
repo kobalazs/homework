@@ -1,5 +1,19 @@
 # Homework: Hacker News V4.0
 
+## Description
+
+A redesign of Hacker News homepage using React & Axios.
+
+### Assumptions
+
+- List only new stories, showing author and title information.
+
+- Use pagination for better performance.
+
+- Add an in-memory cache (TTL = 60 sec) to reduce API load.
+
+- Skip optimising for accessibility or internationalization.
+
 ## Installation guide
 
 ### Requirements
@@ -23,11 +37,14 @@ npm start
 
 Client is served at http://localhost:3000/
 
-## Assumptions
+### Run tests & linter
 
-TODO
+```
+npm run test
+npm run lint
+```
 
-# Specification
+## Original specification
 
 Hacker News is an excellent resource for front end engineers, but it looks quite ugly - have a look here: https://news.ycombinator.com/ .
 
